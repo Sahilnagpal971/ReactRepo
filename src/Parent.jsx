@@ -8,7 +8,7 @@ function Parent(){
     return (
 
         <>
-        <Child  name ="You are so good"  age={26} isStudent= {1}></Child>
+        <Child  name ="Application"  age={26} isStudent= {1}></Child>
         <p> Message from Parent {message}</p>
         <p> Response from Child {response}</p>
         </>

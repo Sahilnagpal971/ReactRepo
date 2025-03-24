@@ -1,35 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-function Counter(){
+function olor() {
+  const [color, setColor] = useState("#ffffff"); // Initial background color
 
-    const [count,setCount]=useState(0);
-    const increment = ()=>setCount(count+1);
-    //conditional decrement
+  // Function to handle color change
+  const handleColorChange = (event) => {
+    setColor(event.target.value);
+  };
 
-    const decrement = ()=>{
-        if (count>0){
-       
-            setCount(count-1);
+  return (
+    <div style={{ height: "100vh", backgroundColor: color, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+      <h2>Pick a Background Color</h2>
 
-        }
-    }
-       
-
-    return (
-<>
-        <div>
-            <p>Count:{count}</p>
-
-            <button onClick={increment}>Increase</button>
-            {/* {count} */}
-            <button onClick={decrement}>Decrease</button>
-        </div>
-<div>
-    
-</div>
-</>
-    
-    );
-
+      <select onChange={handleColorChange} value={color}>
+        <option value="#ffffff">White</option>
+        <option value="#ff0000">Red</option>
+        <option value="#00ff00">Green</option>
+        <option value="#0000ff">Blue</option>
+        <option value="#ffff00">Yellow</option>
+        <option value="#ff00ff">Magenta</option>
+        <option value="#00ffff">Cyan</option>
+        <option value="#000000">Black</option>
+      </select>
+    </div>
+  );
 }
-export default Counter
+
+export default color;
